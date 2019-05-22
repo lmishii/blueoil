@@ -91,7 +91,7 @@ RUN apt-get update && apt-get install -y g++-5-arm-linux-gnueabihf && \
     ln -s /usr/bin/arm-linux-gnueabihf-g++-5 /usr/bin/arm-linux-gnueabihf-g++
 
 # Install requirements
-COPY lmnet/*requirements.txt /tmp/requirements/
+COPY ../lmnet/*requirements.txt /tmp/requirements/
 RUN pip install -r /tmp/requirements/gpu.requirements.txt && rm -rf /tmp/requirements
 # In order to install blueoil requirements `prompt_toolkit==1.0.15`, uninstall prompt-toolkit v2.0 that depends on `pdb==0.10.2`.
 RUN pip uninstall -y prompt-toolkit
